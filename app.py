@@ -5,7 +5,6 @@ import plotly.express as px
 import streamlit as st
 from sqlalchemy import create_engine
 import toml
-config = toml.load("secrets.toml")
 
 def login_db():
     try:
