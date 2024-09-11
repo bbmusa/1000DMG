@@ -10,9 +10,9 @@ config = toml.load("secrets.toml")
 def login_db():
     try:
         # AWS RDS configuration
-        rds_host = config['HOST']
-        rds_user = config['DB_USER']
-        rds_password = config['PASS']
+        rds_host = st.secrets['HOST']
+        rds_user = st.secrets['DB_USER']
+        rds_password = st.secrets['PASS']
         rds_db_name = 'ema1000'
         rds_port = 3306
 
