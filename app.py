@@ -1,21 +1,21 @@
-import os
+
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-from dotenv import load_dotenv
 from sqlalchemy import create_engine
-
-load_dotenv()
+import toml
+config = toml.load("config.toml")
 
 def login_db():
     try:
         # AWS RDS configuration
-        rds_host = str(os.environ.get("HOST"))
-        rds_user = str(os.environ.get("DB_USER"))
-        rds_password = str(os.environ.get("PASS"))
+        rds_host = config['HOST']
+        rds_user = config['DB_USER']
+        rds_password = config['PASS']
         rds_db_name = 'ema1000'
         rds_port = 3306
+
 
         # Create the connection string
         connection_string = f'mysql+pymysql://{rds_user}:{rds_password}@{rds_host}:{rds_port}/{rds_db_name}'
