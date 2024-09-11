@@ -9,9 +9,9 @@ import toml
 def login_db():
     try:
         # AWS RDS configuration
-        rds_host = st.secrets['HOST']
-        rds_user = st.secrets['DB_USER']
-        rds_password = st.secrets['PASS']
+        rds_host = 'dmg1000ema.c7ec8ma4gknd.us-east-1.rds.amazonaws.com'
+        rds_user = 'admin'
+        rds_password = 'Admin123'
         rds_db_name = 'ema1000'
         rds_port = 3306
 
